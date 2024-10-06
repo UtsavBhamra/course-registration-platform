@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add faculty</title>
+</head>
+<body>
+    <h2>Create New Faculty</h2>
+    <form method="post">
+        <h4>User Form</h4>
+        
+        {% csrf_token %}
+        {{ user_form.as_p }}
+
+        <h4>Faculty form</h4>
+
+        {{ faculty_form.as_p }}
+        <button type="submit">Submit Faculty</button>
+    </form>
+</body>
+</html>

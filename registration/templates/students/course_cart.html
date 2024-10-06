@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course cart</title>
+</head>
+<body>
+    <h1>Course cart</h1>
+    <h2>{{cart_obj.student.student_user.username}}</h2>
+    <ul>
+        {% for course in courses %}
+        <li>
+            <a href="{% url 'course_details' course.code %}">{{course.title}}</a>
+            <a href="{% url 'remove_from_cart' course.code %}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <button><a href="{% url 'request_approval' %}">Request for Approval</a></button>
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>

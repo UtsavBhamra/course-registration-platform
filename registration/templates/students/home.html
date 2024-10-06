@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+</head>
+<body>
+    <h1>Welcome {{user_ref}}</h1>
+    <h3><a href="{% url 'view_cart'%}">Go to Cart</a></h3>
+    <br>
+    <h3>Requested Courses- </h3>
+    <ul>
+        {% for course in course_list_requested %}
+        <li><a href="{% url 'course_details' course.code %}">{{course.title}}</a></li>
+        {% endfor %}
+    </ul>
+    <h3>Accepted Courses- </h3>
+    <ul>
+        {% for course in course_list_accepted %}
+        <li><a href="{% url 'course_details' course.code %}">{{course.title}}</a></li>
+        {% endfor %}
+    </ul>
+    <h3>Browse all courses- </h3>
+    <ul>
+        {% for course in all_courses %}
+        <li>
+            <a href="{% url 'course_details' course.code %}">{{course.title}}</a>
+            <a href="{% url 'add_to_cart' course.code %}">Add to Cart</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

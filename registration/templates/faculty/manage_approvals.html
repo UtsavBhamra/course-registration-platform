@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approve Students</title>
+</head>
+<body>
+    <h1>Students requesting approval for {{course.title}}- </h1>
+    <ul>
+        {% for student in req_students %}
+        <li>
+            {{student.student_user.username}}
+            <a href="{% url 'approve_students' course.code student.student_id %}">Approve</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <h1>Students approved for {{course.title}}- </h1>
+    <ul>
+        {% for student in acc_students %}
+        <li>
+            {{student.student_user.username}}
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home'%}">Back to Home</a>
+</body>
+</html>

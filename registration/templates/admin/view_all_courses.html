@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Courses</title>
+</head>
+<body>
+    <ul>
+        {% for course in course_list %}
+        <li>
+            <a href="{% url 'course_details' course.code %}">{{course.title}}</a>
+            <a href="{% url 'admin_delete_courses' course.code %}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>

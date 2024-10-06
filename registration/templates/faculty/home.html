@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Dashboard</title>
+</head>
+<body>
+    <h1>Welcome {{faculty_user}} !</h1>
+    <h2>Courses taught- </h2>
+    <ul>
+        {% for course in course_list %}
+        <li><a href="{% url 'course_details' course.code %}">{{course.title}}</a></li>
+        {% endfor %}
+    </ul>
+    <h2>Approve Students- </h2>
+    <ul>
+        {% for course in course_list %}
+        <li><a href="{% url 'manage_approvals' course.code%}">{{course.title}}</a></li>
+        {% endfor %}
+    </ul>
+    <h2>Modify Courses- </h2>
+    <ul>
+        {% for course in course_list %}
+        <li><a href="{% url 'home' %}">{{course.title}}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

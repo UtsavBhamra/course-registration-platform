@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>Welcome {{admin_user}}</h1>
+    <br>
+    <h2>Manage Students</h2>
+    <a href="{% url 'admin_create_student' %}">Add New Students</a>
+    <a href="{% url 'admin_view_students' %}">View All Students</a>
+    <br>
+    <h2>Manage Faculty</h2>
+    <a href="{% url 'admin_create_faculty' %}">Add New Faculty</a>
+    <a href="{% url 'admin_view_faculty' %}">View All Faculty</a>
+    <h2>Manage Courses</h2>
+    <a href="{% url 'admin_create_course' %}">Create New Course</a>
+    <a href="{% url 'admin_view_courses' %}">View All Courses</a>
+</body>
+</html>
