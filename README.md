@@ -1,0 +1,1 @@
+# A Djnago based course registration platform
